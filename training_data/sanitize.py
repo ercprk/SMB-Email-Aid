@@ -66,7 +66,26 @@ def contain_junk(text):
              "Cake", "vegan", "dairy", "queso", "Reuben", "Cone", "Dine-in",
              "MIDWEEK", "slices", "nuts", "churros", "lobster", "Burger",
              "coffee", "smoothie", "garlic", "beer", "cats", "cream",
-             "Sandwiches", "uncertain", "crazy", "deliver", "Scoop"]
+             "Sandwiches", "uncertain", "crazy", "deliver", "Scoop", "Grill",
+             "Buy a drink", "1950", "photo of your ex", "Leap Year", "code",
+             "Available All Day!", "XL", "Dine-In only", "Open now to see",
+             "grill", "Saturday", "temporarily", "time at home", "ToGo",
+             "No contact", "No wait", "No lines", "Teaching", "Parenting",
+             "andWhat", "andOr", "awkward", "challenges", "responders", 
+             "carryout", "birthday", "Great American", "1.", "Chirp",
+             "STAY-AT-HOME", "BURGERS", "Takeout", "Beer", "GreatSweet",
+             "springtime", "7-oz", "To-Go", "Postmates", "Easter", "Lobster",
+             "Learning at home", "Buy 8", "Buy 16", "Bacon", "Sleep",
+             "leaving", "weekdays", "CATER", "Signature", "PRIZE", "Convenient",
+             "contactless", "safely", "Expiration", "BONUS", "New users",
+             "appetizer", "Congratulations", "signed in", "lSee", "heaters",
+             "let the NEW", "prizes", "HiAnd", "See ya soon", "See you there!",
+             "CHECKING IN", "Deliciouso", "You betcha", "Done.", 
+             "in this together", "Stay home", "CallLet", "Smokey Bones",
+             "We are Open", "hoppy", "literally", "at home", "egg hunt",
+             "New.", "To Go.", "again soon", "next event", "Hop Out", "handle",
+             "HANDLE", "CHEF", "rapidly", "limited", "girls", "tLike", "newAnd",
+             "cluttered", "tWelcome", "Enter now", "tap", "toCheck", "emoji"]
 
     for word in words:
         if word in text:
