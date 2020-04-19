@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SMB Email Aid</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
-  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="ui/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
 
@@ -75,54 +75,6 @@
 <script src="http://html2canvas.hertzen.com/dist/html2canvas.min.js">
 </script>
 
-<script type="text/javascript">
-  $(function () {
-    $('#gen-form').submit(function (e) {
-      e.preventDefault();
-      $.ajax({
-        type: "POST",
-        url: "https://smb-email-aid-5kntub6c2a-uk.a.run.app/",
-        dataType: "json",
-        data: JSON.stringify(getInputValues()),
-        beforeSend: function (data) {
-          $('#generate-text').addClass("is-loading");
-          $('#generate-text').prop("disabled", true);
-        },
-        success: function (data) {
-          $('#generate-text').removeClass("is-loading");
-          $('#generate-text').prop("disabled", false);
-          $('#tutorial').remove();
-          var gentext = data.text;
-          if ($("#prefix").length & $("#prefix").val() != '') {
-            var pattern = new RegExp('^' + $("#prefix").val(), 'g');
-            var gentext = gentext.replace(pattern, '<strong style=\"color:#A50B5E\">' + $("#prefix").val() + '</strong>');
-          }
-
-          var gentext = gentext.replace(/\n\n/g, "<div><br></div>").replace(/\n/g, "<div></div>");
-          $("#model-output").append("<li style=\"color:white;\">"+gentext+"</li></br>").hide().fadeIn("slow");;
-        },
-        error: function (jqXHR, textStatus, errorThrown) {
-          $('#generate-text').removeClass("is-loading");
-          $('#generate-text').prop("disabled", false);
-          $('#tutorial').remove();
-          var html = '<div class="gen-box warning"></div>';
-          $("#model-output").append("<li style=\"color:#EA350D;\">Error generating phrases - please try again</li></br>").hide().fadeIn("slow");;
-        }
-      });
-    });
-    $('#clear-text').click(function (e) {
-      $('#model-output').text('')
-    });
-  });
-
-  function getInputValues() {
-    var inputs = {};
-    $("textarea, input").each(function () {
-      inputs[$(this).attr('id')] = $(this).val();
-    });
-    return inputs;
-  }
-
-</script>
+<script type="text/javascript" src="ui/script.js"></script>
 
 </html>
